@@ -1,4 +1,4 @@
-# django-meta-pages
+# Django Meta Pages
 Django Library To Use Meta Tags And Schema Structure In Any URL Path
 
 
