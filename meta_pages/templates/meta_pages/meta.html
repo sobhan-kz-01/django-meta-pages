@@ -1,0 +1,35 @@
+{% if meta.title %}
+<title>{{meta.title}}</title>
+{% endif %}
+{% if meta.meta_description %}
+<meta name="description" content="{{meta.meta_description}}">
+{% endif %}
+{% if meta.meta_keywords %}
+  <meta name="keywords" content="{{meta.meta_keywords}}">
+{% endif %}
+{% if meta.meta_canonical %}
+  <link rel="canonical" href="{{meta.meta_canonical}}" />
+{% endif %}
+{% if meta.meta_robots %}
+  <meta name="robots" content="{{meta.meta_robots}}">
+  {% endif %}
+{% if meta.og_title %}
+<meta property="og:title" content="{{meta.og_title}}" />
+{% endif %}
+{% if meta.og_description %}
+<meta property="og:description" content="{{meta.og_description}}" />
+{% endif %}
+{% if meta.og_image %}
+<meta property="og:image" content="{{meta.og_image.url}}" />
+{% endif %}
+{% if meta.og_url %}
+<meta property="og:url" content="{{meta.og_url}}" />
+{% endif %}
+{% if meta.og_site_name %}
+<meta property="og:site_name" content="{{meta.og_site_name}}" />
+{% endif %}
+{% if meta.custom_meta.exists %}
+{% for i in meta.custom_meta.all %}
+<meta {% if i.status == 'property' %}property{% else %}name{% endif %}="og:site_name" content="{{i.content}}" />
+{% endfor %}
+{% endif %}
